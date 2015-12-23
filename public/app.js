@@ -1,6 +1,6 @@
-var filterlady = angular.module("filterlady", []);
+var app = angular.module("filterlady", [])
 
-function mainController($scope, $http){
+.controller( "mainController", function($scope, $http){
 	$scope.formData = {};
 	$http.get("/api/products")
 		.success(function(data){
@@ -10,4 +10,4 @@ function mainController($scope, $http){
 		.error(function(data){
 			console.log("Error: " + data);
 		});
-}
+});
