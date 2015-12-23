@@ -1,0 +1,19 @@
+{
+  "name": "fl-api",
+  "version": "1.0.0",
+  "description": "api for filterlady",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aayush Agarwal",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "faker": "^3.0.1",
+    "jsonwebtoken": "^5.4.1",
+    "mongoose": "^4.3.3",
+    "morgan": "^1.6.1"
+  }
+}

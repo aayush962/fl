@@ -1,0 +1,238 @@
+<div class="header">
+<div class="topcontent">
+<div class="container">
+
+<!-- Top Row -->
+
+	<div class="row small-font">
+
+		<div class="col-md-7 padded-3 col-md-offset-5">
+  			<button type="button" class="btn btn-default btn-xs dropdown-toggle no-border green" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    		Get a Quotation
+    		</button>
+				<button type="button" class="btn btn-default btn-xs dropdown-toggle no-border" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    		Supplier Membership
+  			</button>
+  			<button type="button" class="btn btn-default btn-xs dropdown-toggle no-border" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    		Customer Support
+  			</button>
+  			<button type="button" class="btn btn-default btn-xs dropdown-toggle no-border" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    		About
+  			</button>
+
+  			<div class="btn-group">
+  			<button type="button" class="btn btn-default btn-xs dropdown-toggle no-border orange-back" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    		Sign Up <span class="caret"></span>
+  			</button>
+  			<ul class="dropdown-menu">
+    			<li><a href="#" data-toggle="modal" data-target="#signup-buyer">Buyer</a></li>
+    			<li><a href="#" data-toggle="modal" data-target="#signup-prof">Professional</a></li>
+ 				 </ul>
+			</div>
+
+  			<button type="button" class="btn btn-default btn-xs dropdown-toggle no-border" data-toggle="modal" data-target="#signin">
+    		Sign In
+  			</button>
+
+		</div>
+
+	</div><!-- top row ends -->
+
+	<!-- Search row starts -->
+		<div class="row padded">
+					<div class="col-md-2">
+						<img src="images/header-logo.png">
+					</div>
+
+			<div class="col-md-2 padded-searchbar">
+				<div class="btn-group">
+  			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    		Select Location <span class="caret"></span>
+  			</button>
+
+  			<ul class="dropdown-menu">
+    			<li><a href="#">Gurgaon</a></li>
+    			<li><a href="#">Mumbai</a></li>
+    			<li><a href="#">Chandigarh</a></li>
+    			<li><a href="#">Jaipur</a></li>
+    			<li><a href="#">Ahmedabad</a></li>
+    			<li><a href="#">Bangaluru</a></li>
+    			<li><a href="#">Hyderabad</a></li>
+    			<li><a href="#">Delhi</a></li>
+ 				 </ul>
+			</div>
+		</div>
+		<div class="col-md-2 padded-6 padded-searchbar clubbed">
+				<select class="form-control type clubbed" ng-model="search_category">
+  					<option ng-repeat="option in search_categories.availableOptions" value="{[option]}">
+  						{[option]}
+  					</option>
+				</select>
+			</div>
+			<div class="col-md-4 padded-searchbar">
+				<div class="input-group searchbar">
+      <input type="text" class="form-control search" ng-model="search_string" placeholder="Search for...">
+      <span class="input-group-btn">
+        <a class="btn btn-default type orange-back" type="button" href="#/search/?category={[search_category]}&q={[search_string]}">Go!</a>
+      </span>
+    </div>
+    	</div>
+		</div> 
+	</div>
+</div>
+<!-- Serach row ends -->
+
+
+<!-- responsive Mega Menu starts -->
+
+<div class="row">
+<div class="menubar">
+	<div class="container">
+
+
+
+
+<nav id="primary_nav_wrap">
+<ul>
+  <li class="current-menu-item"><a href="#">Home</a></li>
+  <li><a href="#">HOME FURNISHINGS</a>
+    <ul>
+      <li><a href="#" class="black-text">Furnishing 1</a></li>
+      <li><a href="#" class="black-text">Furnishing 2</a></li>
+      <li><a href="#" class="black-text">Furnishing 3</a></li>
+      <li><a href="#" class="black-text">Furnishing 4</a>
+        <ul>
+          <li><a href="#" class="black-text">Deep Menu 1</a>
+            <ul>
+              <li><a href="#" class="black-text">Type 1</a></li>
+              <li><a href="#" >Type Deep 2</a></li>
+              <li><a href="#" class="black-text">Type Deep 3</a></li>
+               <li><a href="#" class="black-text">Sub Deep 4</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Furnishings</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Furnishing 5</a></li>
+    </ul>
+  </li>
+  <li><a href="#">TILES AND CEMENT</a>
+    <ul>
+      <li><a href="#">Sub Menu 1</a></li>
+      <li><a href="#">Sub Menu 2</a></li>
+      <li><a href="#">Sub Menu 3</a></li>
+    </ul>
+  </li>
+  <li><a href="#">FLOOR AND FURNISHINGS</a>
+    <ul>
+      <li class="dir"><a href="#">Sub Menu 1</a></li>
+      <li class="dir"><a href="#">Sub Menu 2</a>
+        <ul>
+          <li><a href="#">Category 1</a></li>
+          <li><a href="#">Category 2</a></li>
+          <li><a href="#">Category 3</a></li>
+          <li><a href="#">Category 4</a></li>
+          <li><a href="#">Category 5</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Sub Menu 3</a></li>
+      <li><a href="#">Sub Menu 4</a></li>
+      <li><a href="#">Sub Menu 5</a></li>
+    </ul>
+  </li>
+  <li><a href="#">GLASS MATERIALS</a></li>
+  <li><a href="#">FLOOR AND FURNISHINGS</a></li>
+  <li><a href="#">GLASS MATERIALS</a></li>
+  <li><a href="#">CEMENT</a></li>
+</ul>
+</nav>
+
+</div>
+</div>
+</div>
+<!-- responsive Mega Menu ENDS -->
+
+	</div>
+</div>
+
+<!-- header ends -->
+
+
+
+<!-- signup-seller modal starts -->
+
+<div class="modal fade" id="signup-prof" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">SignUp as a Professional</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- signup-seller modal ends -->
+
+<!-- signup-buyer modal starts -->
+
+<div class="modal fade" id="signup-buyer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">SignUp as a Buyer</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- signup-buyer modal ends -->
+
+<!-- signin-buyer -->
+
+<div class="modal fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+ 		
+        <script>
+          // Basic FitVids Test, needed if you are using videos in the menu
+        $(".container").fitVids();
+        $(".container-fluid").fitVids();
+        $(document).on('click', '.mega-wide .dropdown-menu', function(e) {
+           e.stopPropagation()
+        })
+        </script>

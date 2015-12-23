@@ -1,0 +1,112 @@
+<div class="row homepage">
+	<div class="container">
+
+	<!-- Sidebar ends -->
+
+	<!-- _______________________________________________________________- -->
+
+	<div class="col-md-2 sidebar">
+		<div class="header-category">
+			<h5>FILTER PRODUCTS BY</h5>
+		</div>
+
+		<div class="categories">
+			<span class="side-titles">CATEGORY </span></br>
+			<span class="sub-category side-titles">> FLOORING</span></br>
+			<a href="#" class="sorting-links">TILES(220)</a></br>
+			<a href="#" class="sorting-links">GRANITE(389)</a></br>
+			<a href="#" class="sorting-links">MARBLE(770)</a></br>
+			<a href="#" class="sorting-links">TIMBER(56)</a></br>
+			<a href="#" class="sorting-links">TILES(220)</a></br>
+			<a href="#" class="sorting-links">GRANITE(389)</a></br>
+			<a href="#" class="sorting-links">MARBLE(770)</a></br>
+			<a href="#" class="sorting-links">TIMBER(56)</a></br>		
+		</div>
+		<hr class="sidebar">
+
+		<div class="categories">
+			<span class="side-titles">CATEGORY </span></br>
+			<span class="sub-category side-titles">> FLOORING</span></br>
+			<a href="#" class="sorting-links">TILES(220)</a></br>
+			<a href="#" class="sorting-links">GRANITE(389)</a></br>
+			<a href="#" class="sorting-links">MARBLE(770)</a></br>
+			<a href="#" class="sorting-links">TIMBER(56)</a></br>
+			<a href="#" class="sorting-links">TILES(220)</a></br>
+			<a href="#" class="sorting-links">GRANITE(389)</a></br>
+			<a href="#" class="sorting-links">MARBLE(770)</a></br>
+			<a href="#" class="sorting-links">TIMBER(56)</a></br>		
+		</div>
+		<hr class="sidebar">
+
+		<div class="categories">
+			<span class="side-titles">CATEGORY </span></br>
+			<span class="sub-category side-titles">> FLOORING</span></br>
+			<a href="#" class="sorting-links">TILES(220)</a></br>
+			<a href="#" class="sorting-links">GRANITE(389)</a></br>
+			<a href="#" class="sorting-links">MARBLE(770)</a></br>
+			<a href="#" class="sorting-links">TIMBER(56)</a></br>
+			<a href="#" class="sorting-links">TILES(220)</a></br>
+			<a href="#" class="sorting-links">GRANITE(389)</a></br>
+			<a href="#" class="sorting-links">MARBLE(770)</a></br>
+			<a href="#" class="sorting-links">TIMBER(56)</a></br>		
+		</div>
+		<hr class="sidebar">
+
+		<div class="categories">
+			<span class="side-titles">CATEGORY </span></br>
+			<span class="sub-category side-titles">> FLOORING</span></br>
+			<a href="#" class="sorting-links">TILES(220)</a></br>
+			<a href="#" class="sorting-links">GRANITE(389)</a></br>
+			<a href="#" class="sorting-links">MARBLE(770)</a></br>
+			<a href="#" class="sorting-links">TIMBER(56)</a></br>
+			<a href="#" class="sorting-links">TILES(220)</a></br>
+			<a href="#" class="sorting-links">GRANITE(389)</a></br>
+			<a href="#" class="sorting-links">MARBLE(770)</a></br>
+			<a href="#" class="sorting-links">TIMBER(56)</a></br>		
+		</div>
+		<hr class="sidebar">
+
+	</div> 
+
+	<!-- Sidebar ends -->
+
+	<!-- ____________________________________________________________________________ -->
+
+	<!-- Product Listing Starts -->
+
+	<div class="col-md-9 product-listing">
+		<div class="product" style="margin-top:0px" ng-repeat="product in searchResults">
+
+			<div class="col-md-2 prod-image" style="background-image:url('images/bricks.png')">
+			</div>
+			<div class="col-md-6 prod-desc">
+				<span class="side-titles">{[product.product.name.first]} {[product.product.name.last]}</span></br>
+				<span class="prod-price">Rs. {[product.product.price.min]} - {[::singleProduct.product.price.max]}</span><span class="prod-per">/Sq. Mtr.</span></br>
+				<span class="prod-min-title">{[product.product.minOrder]}</span><span class="prod-min">(Min. Order)</span></br></br>
+				<p ng-repeat="(key, value) in product.product.details" >
+				<span class="prod-spec-title" >{[key]}: </span><span class="prod-spec">{[value]}</span></br>
+				</p>
+				<div class="prod-more"><span>See More Details >></span></div>
+			</div>
+
+			<!-- Seller info Starts-->
+
+			<div class="col-md-2 seller-info">
+				<span class="side-titles">{[product.dealer.name]} </span></br>
+				<span class="prod-min">{[product.dealer.city]}  | </span><a href=""><span class="seller-contact">Contact Seller</span></a></br></br>
+				<span class="prod-spec-title">Mobile No. :</span><span class="prod-spec">{[product.dealer.contact]} </span></br>
+				<span class="prod-spec-title">Address :</span><span class="prod-spec">{[product.dealer.address]} </span></br>
+				<button type="button" class="btn btn-default dropdown-toggle no-border green contact-seller" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get a Quotation</button>
+			</div>
+
+			<!-- Seller info ends -->
+
+		</div> <!-- single product listing ends -->
+
+		
+	</div><!-- product listing ends -->
+	</div>
+</div><!-- row ends -->
+
+<!-- page content ends-->
+

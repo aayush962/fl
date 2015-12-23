@@ -1,0 +1,114 @@
+
+<!-- Product Image -->
+
+<div class="row homepage">
+	<div class="container">
+
+
+		<div class="col-md-4" style="margin-top:0px">
+			<div class="prod-images col-md-4">
+				<div class="product-main-image" style="background-image:url('images/bricks.png')">
+				</div>
+
+				<div class="prod-thumbs">
+
+					<div class="prod-thumb-image" style="background-image:url('images/bricks.png')">
+					</div>
+					<div class="prod-thumb-image" style="background-image:url('images/bricks.png')">
+					</div>
+					<div class="prod-thumb-image" style="background-image:url('images/bricks.png')">
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+<!-- Product Images End -->
+
+		<!-- ______________________________________________________________________________ -->
+
+<!-- Product details start -->
+
+<div class="col-md-5 prod-details">
+
+	<span class="prod-title">{[::singleProduct.product.name.first]}</span>
+		</br></br>
+	<span class="prod-price">{[::singleProduct.product.price.min]} - {[::singleProduct.product.price.max]}</span>
+
+	<span class="prod-per">/Sq. Mtr.</span>
+		</br>
+				
+	<span class="prod-min-title">{[::singleProduct.product.minOrder]}</span>
+
+	<span class="prod-min">(Min. Order)</span>
+		</br></br>
+
+		
+	<span><u>BASIC DETAILS</u></span></br>
+		
+		<div class="row">
+			<div class="col-md-6">
+
+				<!-- ng-repeat start for product details -->
+
+				<p  ng-repeat="(key, value) in singleProduct.product.details"><span class="prod-spec-title" >{[key]}: </span><span class="prod-spec">{[value]}</span></p></br></br>
+
+				<!-- ng-repeat ends -->						
+			</div>
+
+		</div>
+
+		
+		<!-- ______________________________________________________________________________ -->
+
+		<!-- Comment Section Starts -->		
+
+		<div class="row">
+
+			<div class="col-md-2 product-contact-form">
+				<textarea class="form-control" rows="5" placeholder="Leave your comment here"></textarea>
+			</div>
+			
+			<div class="col-md-1 prod-buttons">
+			
+				<button type="button" class="btn btn-default dropdown-toggle no-border orange-back " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get a Quotation</button>
+
+	    		<button type="button" class="btn btn-default dropdown-toggle no-border green prod-contact-seller" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact Seller</button>
+				
+			</div>
+		</div>
+	</div>
+
+	<!-- Comment section ends -->
+
+	<!-- ______________________________________________________________________________ -->
+
+ 
+	<!--Seller Info Starts -->
+
+		<div class="col-md-2 seller-info">
+
+			<span class="side-titles">{[singleProduct.dealer.name]}</span></br>
+
+			<span class="prod-min">{[singleProduct.dealer.city]} | </span>
+				<a href=""><span class="seller-contact">Contact Seller</span></a></br></br>
+
+			<span class="prod-spec-title">Mobile No. :</span>
+
+			<span class="prod-spec">{[singleProduct.dealer.contact]}</span></br>
+
+			<span class="prod-spec-title">Address :</span>
+
+			<span class="prod-spec">{[singleProduct.dealer.address]}</span></br>
+			
+			<button type="button" class="btn btn-default dropdown-toggle no-border green contact-seller" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get a Quotation</button>
+		</div>
+
+		<!--Seller Info ends -->
+
+	</div> <!-- Container ends -->
+
+</div><!-- row ends -->
+
+<!-- Product Listing Ends -->
+
