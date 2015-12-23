@@ -9,7 +9,8 @@ var Dealer      = require("./models/dealer.js")
 app.use(express.static(__dirname + '/public')); 
 
 //Connecting to the database
-mongoose.connect("mongodb://localhost/flapi")
+var uri = process.env.MONGOLAB_URI || '127.0.0.1/flapi';
+mongoose.connect(uri)
 //////////////////////////////////////////////
 //
 //Seeding the database 
