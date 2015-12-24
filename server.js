@@ -1,10 +1,11 @@
 var express     = require("express");
 var app         = express();
 var bodyParser  = require("body-parser");
-//var seedDB      = require("./seeds.js")
+// var seedDB      = require("./seeds.js")
 var mongoose    = require("mongoose");
 var Product     = require("./models/product.js")
 var Dealer      = require("./models/dealer.js")
+var Category    = require("./models/category.js")
 
 app.use(express.static(__dirname + '/public')); 
 
@@ -14,7 +15,7 @@ mongoose.connect(uri)
 //////////////////////////////////////////////
 //
 //Seeding the database 
-//seedDB();
+// seedDB();
 //////////////////////
 
 //Body Parser
@@ -22,7 +23,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 ////////////////////////////////////////////////////
 
-var port = process.env.PORT || 8000;
+var port = process.env.PORT || 3000;
 
 // CRUD Routes for Products ///////////////////////////////////////////////////////
 
@@ -98,7 +99,7 @@ var port = process.env.PORT || 8000;
 
 
 
-// CRUD Routes for Dealers ///////////////////////////////////////////////////////
+// CRUD Routes for Categories ///////////////////////////////////////////////////////
 
 
 //POST Dealer
@@ -111,23 +112,23 @@ var port = process.env.PORT || 8000;
 			if(err){
 				res.send(err);
 			} else{
-				res.json({message: "Dealer Created!"});
+				res.json({message: "dealer Created!"});
 			}
 		});
 	});
-//GET Dealer
+//GET dealer
 	app.get("/api/dealers", function(req, res){
 
-		Dealer.find(function(err, dealers){
+		Dealer.find(function(err, categories){
 			if(err){
 				res.send(err);
 			} else{
-				res.json(dealers);
+				res.json(categories);
 			}
 		});
 
 	});
-//GET Single Dealer
+//GET Single dealer
 	app.get("/api/dealers/:id", function(req, res){
 		Dealer.findById(req.params.id, function(err, dealer){
 			if(err){
@@ -137,7 +138,7 @@ var port = process.env.PORT || 8000;
 			}
 		});
 	});
-//UPDATE Single Dealer
+//UPDATE Single dealer
 	app.put("api/dealers/:id", function(req, res){
 	Dealer.findById(req.params.id, function(err, dealer){
 			if(err){
@@ -149,13 +150,13 @@ var port = process.env.PORT || 8000;
 					if(err){
 						res.send(err);
 					} else{
-						res.json({ message: "Dealer Was Updated Successfully"});
+						res.json({ message: "dealer Was Updated Successfully"});
 					}
 				});
 			}
 		});
 	});
-//DELETE a Dealer
+//DELETE a dealer
 	app.delete("api/dealers/:id", function(req, res){
 		Dealer.remove({
 			_id: req.params.id
@@ -164,6 +165,79 @@ var port = process.env.PORT || 8000;
 				res.send(err);
 			} else{
 				res.json({message: "Successfully deleted the dealer!"});
+			}
+		});
+	});
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+
+// CRUD Routes for Categories ///////////////////////////////////////////////////////
+
+
+//POST category
+	app.post("/api/categories", function(req, res) {
+
+		var category = new Category();
+		category.title = req.body.title;
+
+		category.save(function(err){
+			if(err){
+				res.send(err);
+			} else{
+				res.json({message: "category Created!"});
+			}
+		});
+	});
+//GET category
+	app.get("/api/categories", function(req, res){
+
+		Category.find(function(err, categories){
+			if(err){
+				res.send(err);
+			} else{
+				res.json(categories);
+			}
+		});
+
+	});
+//GET Single category
+	app.get("/api/categories/:id", function(req, res){
+		Category.findById(req.params.id, function(err, category){
+			if(err){
+				res.send(err);
+			} else{
+				res.json(category);
+			}
+		});
+	});
+//UPDATE Single category
+	app.put("api/categories/:id", function(req, res){
+	Category.findById(req.params.id, function(err, category){
+			if(err){
+				res.send(err);
+			} else{
+				category.title = req.body.title
+
+				category.save(function(err){
+					if(err){
+						res.send(err);
+					} else{
+						res.json({ message: "category Was Updated Successfully"});
+					}
+				});
+			}
+		});
+	});
+//DELETE a category
+	app.delete("api/categories/:id", function(req, res){
+		Category.remove({
+			_id: req.params.id
+		}, function(err, category){
+			if(err){
+				res.send(err);
+			} else{
+				res.json({message: "Successfully deleted the category!"});
 			}
 		});
 	});

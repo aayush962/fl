@@ -10,4 +10,24 @@ var app = angular.module("filterlady", [])
 		.error(function(data){
 			console.log("Error: " + data);
 		});
+
+	$http.get("/api/dealers")
+		.success(function(data){
+			$scope.dealers = data;
+			console.log(data);
+		})
+		.error(function(data){
+			console.log("Error: " + data);
+		});
+
+	$http.get("/api/categories")
+		.success(function(data){
+			$scope.categories = data;
+			console.log(data);
+		})
+		.error(function(data){
+			console.log("Error: " + data);
+		});
+
+
 });
