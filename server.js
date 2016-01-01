@@ -3,15 +3,18 @@ var app         = express();
 var bodyParser  = require("body-parser");
 // var seedDB      = require("./seeds.js")
 var mongoose    = require("mongoose");
-var Product     = require("./models/product.js")
-var Dealer      = require("./models/dealer.js")
-var Category    = require("./models/category.js")
+
+// Connecting the models ////////////////////
+var Dealer      = require("./models/dealer.js");
+var Product     = require("./models/product");
+var Category    = require("./models/category");
+var Brand       = require("./models/brand");
+/////////////////////////////////////////////
 
 app.use(express.static(__dirname + '/public')); 
-
 //Connecting to the database
 var uri = process.env.MONGOLAB_URI || '127.0.0.1/flapi';
-mongoose.connect(uri)
+mongoose.connect(uri);
 //////////////////////////////////////////////
 //
 //Seeding the database 
@@ -45,14 +48,13 @@ var port = process.env.PORT || 3000;
 //GET Product
 	app.get("/api/products", function(req, res){
 
-		Product.find(function(err, products){
+		Product.find().populate("dealers").exec(function(err, products){
 			if(err){
 				res.send(err);
 			} else{
 				res.json(products);
 			}
 		});
-
 	});
 //GET Single Product
 	app.get("/api/products/:id", function(req, res){
@@ -119,7 +121,7 @@ var port = process.env.PORT || 3000;
 //GET dealer
 	app.get("/api/dealers", function(req, res){
 
-		Dealer.find(function(err, categories){
+		Dealer.find().populate("products").exec(function(err, categories){
 			if(err){
 				res.send(err);
 			} else{
@@ -250,5 +252,6 @@ app.get('*', function(req, res) {
     res.sendfile('./public/index.html'); // load our public/index.html file
 });
 
-app.listen(port);
-console.log("Filterlady Api running now!")
+app.listen(port, function(){
+console.log("Filterlady Api running now!");
+});

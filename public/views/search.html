@@ -1,112 +1,106 @@
-<div class="row homepage">
-	<div class="container">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">FilterLADY</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <form class="navbar-form" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" ng-model="search_string" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-	<!-- Sidebar ends -->
+    <!-- Page Content -->
+    <div class="container">
 
-	<!-- _______________________________________________________________- -->
+        <div class="row" ng-controller = "homeCtrl">
 
-	<div class="col-md-2 sidebar">
-		<div class="header-category">
-			<h5>FILTER PRODUCTS BY</h5>
-		</div>
+            <div class="col-md-3">
+                <p class="lead">Shop Name</p>
+                <div class="list-group">
+                    <a href="#/search?q={{category.name}}" ng-repeat="category in categories" class="list-group-item">{{category.name}}</a>
+                </div>
+            </div>
 
-		<div class="categories">
-			<span class="side-titles">CATEGORY </span></br>
-			<span class="sub-category side-titles">> FLOORING</span></br>
-			<a href="#" class="sorting-links">TILES(220)</a></br>
-			<a href="#" class="sorting-links">GRANITE(389)</a></br>
-			<a href="#" class="sorting-links">MARBLE(770)</a></br>
-			<a href="#" class="sorting-links">TIMBER(56)</a></br>
-			<a href="#" class="sorting-links">TILES(220)</a></br>
-			<a href="#" class="sorting-links">GRANITE(389)</a></br>
-			<a href="#" class="sorting-links">MARBLE(770)</a></br>
-			<a href="#" class="sorting-links">TIMBER(56)</a></br>		
-		</div>
-		<hr class="sidebar">
+            <div class="col-md-9">
 
-		<div class="categories">
-			<span class="side-titles">CATEGORY </span></br>
-			<span class="sub-category side-titles">> FLOORING</span></br>
-			<a href="#" class="sorting-links">TILES(220)</a></br>
-			<a href="#" class="sorting-links">GRANITE(389)</a></br>
-			<a href="#" class="sorting-links">MARBLE(770)</a></br>
-			<a href="#" class="sorting-links">TIMBER(56)</a></br>
-			<a href="#" class="sorting-links">TILES(220)</a></br>
-			<a href="#" class="sorting-links">GRANITE(389)</a></br>
-			<a href="#" class="sorting-links">MARBLE(770)</a></br>
-			<a href="#" class="sorting-links">TIMBER(56)</a></br>		
-		</div>
-		<hr class="sidebar">
+                <div class="row">
 
-		<div class="categories">
-			<span class="side-titles">CATEGORY </span></br>
-			<span class="sub-category side-titles">> FLOORING</span></br>
-			<a href="#" class="sorting-links">TILES(220)</a></br>
-			<a href="#" class="sorting-links">GRANITE(389)</a></br>
-			<a href="#" class="sorting-links">MARBLE(770)</a></br>
-			<a href="#" class="sorting-links">TIMBER(56)</a></br>
-			<a href="#" class="sorting-links">TILES(220)</a></br>
-			<a href="#" class="sorting-links">GRANITE(389)</a></br>
-			<a href="#" class="sorting-links">MARBLE(770)</a></br>
-			<a href="#" class="sorting-links">TIMBER(56)</a></br>		
-		</div>
-		<hr class="sidebar">
+                    <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="product in products | filter:search_string">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                
+                                <h4><a href="#">{{product.title}}</a>
+                                </h4>
+                                <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">{{product.price | currency}}</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-		<div class="categories">
-			<span class="side-titles">CATEGORY </span></br>
-			<span class="sub-category side-titles">> FLOORING</span></br>
-			<a href="#" class="sorting-links">TILES(220)</a></br>
-			<a href="#" class="sorting-links">GRANITE(389)</a></br>
-			<a href="#" class="sorting-links">MARBLE(770)</a></br>
-			<a href="#" class="sorting-links">TIMBER(56)</a></br>
-			<a href="#" class="sorting-links">TILES(220)</a></br>
-			<a href="#" class="sorting-links">GRANITE(389)</a></br>
-			<a href="#" class="sorting-links">MARBLE(770)</a></br>
-			<a href="#" class="sorting-links">TIMBER(56)</a></br>		
-		</div>
-		<hr class="sidebar">
 
-	</div> 
+ <!--                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <h4><a href="#">Like this template?</a>
+                        </h4>
+                        <p>If you like this template, then check out <a target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this tutorial</a> on how to build a working review system for your online store!</p>
+                        <a class="btn btn-primary" target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">View Tutorial</a>
+                    </div>
+ -->
+                </div>
 
-	<!-- Sidebar ends -->
+            </div>
 
-	<!-- ____________________________________________________________________________ -->
+        </div>
 
-	<!-- Product Listing Starts -->
+    </div>
+    <!-- /.container -->
 
-	<div class="col-md-9 product-listing">
-		<div class="product" style="margin-top:0px" ng-repeat="product in searchResults">
+    <div class="container">
 
-			<div class="col-md-2 prod-image" style="background-image:url('images/bricks.png')">
-			</div>
-			<div class="col-md-6 prod-desc">
-				<span class="side-titles">{[product.product.name.first]} {[product.product.name.last]}</span></br>
-				<span class="prod-price">Rs. {[product.product.price.min]} - {[::singleProduct.product.price.max]}</span><span class="prod-per">/Sq. Mtr.</span></br>
-				<span class="prod-min-title">{[product.product.minOrder]}</span><span class="prod-min">(Min. Order)</span></br></br>
-				<p ng-repeat="(key, value) in product.product.details" >
-				<span class="prod-spec-title" >{[key]}: </span><span class="prod-spec">{[value]}</span></br>
-				</p>
-				<div class="prod-more"><span>See More Details >></span></div>
-			</div>
+        <hr>
 
-			<!-- Seller info Starts-->
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </footer>
 
-			<div class="col-md-2 seller-info">
-				<span class="side-titles">{[product.dealer.name]} </span></br>
-				<span class="prod-min">{[product.dealer.city]}  | </span><a href=""><span class="seller-contact">Contact Seller</span></a></br></br>
-				<span class="prod-spec-title">Mobile No. :</span><span class="prod-spec">{[product.dealer.contact]} </span></br>
-				<span class="prod-spec-title">Address :</span><span class="prod-spec">{[product.dealer.address]} </span></br>
-				<button type="button" class="btn btn-default dropdown-toggle no-border green contact-seller" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get a Quotation</button>
-			</div>
-
-			<!-- Seller info ends -->
-
-		</div> <!-- single product listing ends -->
-
-		
-	</div><!-- product listing ends -->
-	</div>
-</div><!-- row ends -->
-
-<!-- page content ends-->
-
+    </div>
