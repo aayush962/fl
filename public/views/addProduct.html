@@ -1,0 +1,9 @@
+<form ng-submit="addProduct()" >
+<p>{{title}}</p>
+<input type="text" ng-model="title" placeholder="Title"></br>
+<span>Add Dealers</span>
+<select ng-model="dealers" multiple="true" ng-options="dealer.name for dealer in dealerOptions" placeholder="Select Dealer">Select Dealer</select></br>
+<span>Add Categories</span>
+<select ng-model="categories" multiple="true" ng-options="category.name for category in categoryOptions" placeholder="Select Categories">Select Categories</select>
+<button type="submit">Submit</button>
+</form>

@@ -1,49 +1,14 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">FilterLADY</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
 
     <!-- Page Content -->
     <div class="container">
 
-        <div class="row" ng-controller = "homeCtrl">
+        <div class="row" style="margin-top: 40px;"ng-controller = "homeCtrl">
 
-            <div class="col-md-3">
-                <p class="lead">Shop Name</p>
-                <div class="list-group">
-                    <a href="#" ng-repeat="category in categories" class="list-group-item">{{category.name}}</a>
-                </div>
-            </div>
+            <div ng-include="'views/_sidebar.html'"></div>
 
             <div class="col-md-9">
 
-                <div class="row carousel-holder">
+                <div ng-hide="category" class="row carousel-holder">
 
                     <div class="col-md-12">
                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -76,12 +41,12 @@
 
                 <div class="row">
 
-                    <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="product in products">
+                    <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="product in products | filter: category">
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
                                 
-                                <h4><a href="#">{{product.title}}</a>
+                                <h4><a ng-href="/#/products/{{product._id}}">{{product.title}}</a>
                                 </h4>
                                 <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
                             </div>

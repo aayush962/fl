@@ -1,8 +1,16 @@
 var mongoose = require("mongoose");
+var Category = require("./category.js")
 var Dealer      = require("./dealer.js")
 var productSchema = new mongoose.Schema({
 	title: String,
 	price: String,
+	image: String,
+	categories: [
+		{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "Category"
+		}
+	],
 	dealers: [
 		{
 			type: mongoose.Schema.Types.ObjectId,

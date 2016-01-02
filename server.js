@@ -36,7 +36,8 @@ var port = process.env.PORT || 3000;
 
 		var product = new Product();
 		product.title = req.body.title;
-
+		product.dealers = req.body.dealers;
+		product.categories = req.body.categories;
 		product.save(function(err){
 			if(err){
 				res.send(err);
@@ -58,7 +59,7 @@ var port = process.env.PORT || 3000;
 	});
 //GET Single Product
 	app.get("/api/products/:id", function(req, res){
-		Product.findById(req.params.id, function(err, product){
+		Product.findById(req.params.id).populate("dealers").populate("categories").exec(function(err, product){
 			if(err){
 				res.send(err);
 			} else{
@@ -108,8 +109,8 @@ var port = process.env.PORT || 3000;
 	app.post("/api/dealers", function(req, res) {
 
 		var dealer = new Dealer();
-		dealer.title = req.body.title;
-
+		dealer.name = req.body.name;
+		dealer.products = req.body.products;
 		dealer.save(function(err){
 			if(err){
 				res.send(err);
